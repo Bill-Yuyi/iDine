@@ -22,14 +22,17 @@ struct OrderView: View {
                     }
                     .onDelete(perform: deleteItem)
                 }
+                
                 Section {
                     NavigationLink("Place Order") {
-                        Text("Check out")
+                        CheckoutView()
                     }
                 }
             }
+            .navigationTitle("Order")
+            .navigationBarItems(trailing: EditButton())
         }
-        .navigationTitle("Order")
+        
     }
     
     func deleteItem(at offsets: IndexSet) {
